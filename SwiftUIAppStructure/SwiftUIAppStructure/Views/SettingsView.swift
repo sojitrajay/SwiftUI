@@ -12,3 +12,7 @@ struct SettingsView: View {
         Text("Settings View")
     }
 }
+
+#Preview("Settings") {
+    SettingsView()
+}

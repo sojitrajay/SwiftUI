@@ -10,17 +10,10 @@ import SwiftUI
 @main
 struct SwiftUIAppStructureApp: App {
     var body: some Scene {
-        WindowGroup {
-            TabView {
-                ContentView()
-                    .tabItem {
-                        Label("Content View", systemImage: "book")
-                    }
-                SettingsView()
-                    .tabItem {
-                        Label("Settings View", systemImage: "gear")
-                    }
-            }
-        }
+        #if os(iOS)
+            iOSAppScene()
+        #elseif os(macOS)
+            macOSAppScene()
+        #endif
     }
 }
